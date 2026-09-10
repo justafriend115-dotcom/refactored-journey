@@ -7,86 +7,72 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Gold palette
-        gold: {
-          50: '#FFFAE0',
-          100: '#FFF4C2',
-          200: '#FFE987',
-          300: '#FFD740',
-          400: '#FFC107',
-          500: '#FFD700',
-          600: '#FFA500',
-          700: '#B8860B',
-          800: '#8B6508',
-          900: '#6B4E06',
+        brown: {
+          50: '#FDF8F3',
+          100: '#F5EBE0',
+          200: '#E8D5C4',
+          300: '#D4B9A0',
+          400: '#C4A484',
+          500: '#B8956A',
+          600: '#A67C52',
+          700: '#8B6540',
+          800: '#6F4F32',
+          900: '#4A3320',
         },
-        // Charcoal palette
-        charcoal: {
-          50: '#F5F5F5',
-          100: '#E0E0E0',
-          200: '#CCCCCC',
-          300: '#B3B3B3',
-          400: '#999999',
-          500: '#808080',
-          600: '#666666',
-          700: '#4D4D4D',
-          800: '#333333',
-          900: '#1a1a1a',
-          950: '#0d0d0d',
+        orange: {
+          safety: '#FF6B00',
+          bright: '#FF8533',
+          dark: '#CC5500',
         },
-        // Grey palette
-        grey: {
-          50: '#FAFAFA',
-          100: '#F5F5F5',
-          200: '#EEEEEE',
-          300: '#E0E0E0',
-          400: '#BDBDBD',
-          500: '#9E9E9E',
-          600: '#757575',
-          700: '#616161',
-          800: '#424242',
-          900: '#212121',
+        lavender: {
+          DEFAULT: '#B8A8E8',
+          light: '#D4CAFF',
+          dark: '#8B7AC9',
         },
-        primary: '#FFD700',
-        secondary: '#FFA500',
-        accent: '#FFC107',
-        danger: '#ef4444',
-        warning: '#FFA500',
-        dark: {
-          bg: '#1a1a1a',
-          card: '#333333',
+        black: {
+          DEFAULT: '#0a0a0a',
+          light: '#1a1a1a',
+          medium: '#2a2a2a',
         },
       },
-      animation: {
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'bounce-slow': 'bounce 2s infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'float': 'float 3s ease-in-out infinite',
+      fontFamily: {
+        serif: ['Playfair Display', 'Georgia', 'serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
-      keyframes: {
-        glow: {
-          '0%': { boxShadow: '0 0 10px rgba(255, 215, 0, 0.3)' },
-          '100%': { boxShadow: '0 0 30px rgba(255, 215, 0, 0.6)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-      },
-      backgroundImage: {
-        'gold-gradient': 'linear-gradient(135deg, #FFD740, #FFD700, #B8860B)',
-        'charcoal-gradient': 'linear-gradient(180deg, #1a1a1a, #333333)',
-        'ornate-pattern': 'repeating-linear-gradient(45deg, rgba(255, 215, 0, 0.05) 0px, rgba(255, 215, 0, 0.05) 2px, transparent 2px, transparent 10px)',
+      fontSize: {
+        'mono-tiny': '0.625rem',
       },
       boxShadow: {
-        'gold': '0 0 20px rgba(255, 215, 0, 0.3)',
-        'gold-lg': '0 0 40px rgba(255, 215, 0, 0.4)',
-        'gold-xl': '0 0 60px rgba(255, 215, 0, 0.5)',
-        'ornate': 'inset 0 0 20px rgba(255, 215, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.3)',
+        'neo': '4px 4px 0px #0a0a0a',
+        'neo-lg': '8px 8px 0px #0a0a0a',
+        'neo-orange': '4px 4px 0px #FF6B00',
       },
-      screens: {
-        'xs': '475px',
-        'sm-mobile': '640px',
+      backgroundImage: {
+        'grid-pattern': `linear-gradient(rgba(10, 10, 10, 0.08) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(10, 10, 10, 0.08) 1px, transparent 1px)`,
+      },
+      backgroundSize: {
+        'grid': '24px 24px',
+      },
+      animation: {
+        'neo-pulse': 'neo-pulse 2s ease-in-out infinite',
+        'grid-shift': 'grid-shift 20s linear infinite',
+      },
+      keyframes: {
+        'neo-pulse': {
+          '0%, 100%': {
+            boxShadow: '4px 4px 0px #0a0a0a',
+            transform: 'translate(0, 0)',
+          },
+          '50%': {
+            boxShadow: '6px 6px 0px #FF6B00',
+            transform: 'translate(-1px, -1px)',
+          },
+        },
+        'grid-shift': {
+          '0%': { backgroundPosition: '0 0' },
+          '100%': { backgroundPosition: '24px 24px' },
+        },
       },
     },
   },
