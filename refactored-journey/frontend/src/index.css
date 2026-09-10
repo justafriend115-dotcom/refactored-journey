@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Orange accent elements */
 .accent-orange {
   background-color: var(--accent-orange);
-  color: var(--text-light);
+  color: var(--text-primary); /* Changed to dark text */
   border: var(--border-thin) solid var(--border-color);
 }
 
@@ -163,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Lavender accent elements */
 .accent-lavender {
   background-color: var(--accent-lavender);
-  color: var(--text-primary);
+  color: var(--text-primary); /* Changed to dark text */
   border: var(--border-thin) solid var(--border-color);
 }
 
