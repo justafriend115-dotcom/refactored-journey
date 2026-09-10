@@ -1,0 +1,41 @@
+```
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+target/
+
+# TypeScript/JavaScript
+*.tsbuildinfo
+.next/
+.nuxt/
+.vuepress/dist
+/.cache
+
+# Environment variables
+.env
+.env.local
+.env.*
+!.env.example
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Package lock files (if not wanted in version control)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+```
