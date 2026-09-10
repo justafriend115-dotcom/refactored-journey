@@ -56,8 +56,8 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--bg-primary);
   background-image: 
-    linear-gradient(rgba(10, 10, 10, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 10, 10, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
   background-size: 24px 24px;
   color: var(--text-primary);
   line-height: 1.6;
@@ -101,16 +101,16 @@ h1, h2, h3, h4, h5, h6 {
 /* Neo-brutalist borders */
 .border-neo {
   border: var(--border-thick) solid var(--border-color);
-  box-shadow: 4px 4px 0px var(--border-color);
+  box-shadow: 4px 4px 0px var(--accent-orange);
 }
 
 .border-neo-sm {
   border: var(--border-thin) solid var(--border-color);
-  box-shadow: 2px 2px 0px var(--border-color);
+  box-shadow: 2px 2px 0px var(--accent-lavender);
 }
 
 .border-neo-hover:hover {
-  box-shadow: 6px 6px 0px var(--border-color);
+  box-shadow: 6px 6px 0px var(--accent-lavender);
   transform: translate(-1px, -1px);
   transition: all 0.2s ease;
 }
@@ -129,28 +129,24 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-.bento-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: var(--border-thin) solid transparent;
-  pointer-events: none;
+.bento-item:hover {
+  background: var(--bg-tertiary);
+  box-shadow: 4px 4px 0px var(--accent-orange);
+  transform: translate(-2px, -2px);
+  transition: all 0.2s ease;
 }
 
 /* Technical annotations */
 .annotation {
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   font-size: 0.625rem;
-  color: var(--text-muted);
+  color: var(--accent-lavender);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   border: var(--border-thin) solid var(--border-color);
   padding: 0.25rem 0.5rem;
   display: inline-block;
-  background: var(--bg-primary);
+  background: var(--bg-tertiary);
 }
 
 /* Orange accent elements */
@@ -250,13 +246,14 @@ h1, h2, h3, h4, h5, h6 {
   border: var(--border-thin) solid var(--border-color);
   padding: 1.5rem;
   background: var(--bg-secondary);
-  box-shadow: 4px 4px 0px rgba(10, 10, 10, 0.1);
+  box-shadow: 4px 4px 0px var(--border-color);
   transition: all 0.2s ease;
 }
 
 .dashboard-card:hover {
-  box-shadow: 6px 6px 0px var(--accent-orange);
+  box-shadow: 6px 6px 0px var(--accent-lavender);
   transform: translate(-1px, -1px);
+  background: var(--bg-tertiary);
 }
 
 /* Footer */
@@ -313,12 +310,21 @@ h1, h2, h3, h4, h5, h6 {
   100% { background-position: 24px 24px; }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
 .animate-neo-pulse {
   animation: neo-pulse 2s ease-in-out infinite;
 }
 
 .animate-grid-shift {
   animation: grid-shift 20s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
 /* Mobile Optimizations */
