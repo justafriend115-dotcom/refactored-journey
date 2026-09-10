@@ -3,13 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #3b82f6;
-  --secondary-color: #10b981;
-  --accent-color: #8b5cf6;
+  /* Gold, Dark Charcoal, and Grey Color Palette */
+  --gold-50: #FFFAE0;
+  --gold-100: #FFF4C2;
+  --gold-200: #FFE987;
+  --gold-300: #FFD740;
+  --gold-400: #FFC107;
+  --gold-500: #FFD700;
+  --gold-600: #FFA500;
+  --gold-700: #B8860B;
+  --gold-800: #8B6508;
+  --gold-900: #6B4E06;
+  
+  --charcoal-50: #F5F5F5;
+  --charcoal-100: #E0E0E0;
+  --charcoal-200: #CCCCCC;
+  --charcoal-300: #B3B3B3;
+  --charcoal-400: #999999;
+  --charcoal-500: #808080;
+  --charcoal-600: #666666;
+  --charcoal-700: #4D4D4D;
+  --charcoal-800: #333333;
+  --charcoal-900: #1a1a1a;
+  --charcoal-950: #0d0d0d;
+  
+  --grey-50: #FAFAFA;
+  --grey-100: #F5F5F5;
+  --grey-200: #EEEEEE;
+  --grey-300: #E0E0E0;
+  --grey-400: #BDBDBD;
+  --grey-500: #9E9E9E;
+  --grey-600: #757575;
+  --grey-700: #616161;
+  --grey-800: #424242;
+  --grey-900: #212121;
+  
+  --primary-color: var(--gold-500);
+  --secondary-color: var(--gold-600);
+  --accent-color: var(--gold-400);
   --danger-color: #ef4444;
-  --warning-color: #f59e0b;
-  --dark-bg: #0f172a;
-  --card-bg: #1e293b;
+  --warning-color: var(--gold-600);
+  --dark-bg: var(--charcoal-900);
+  --card-bg: var(--charcoal-800);
 }
 
 body {
@@ -20,30 +55,33 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--dark-bg);
-  color: #f8fafc;
+  color: var(--charcoal-100);
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Maximalist Gold */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--dark-bg);
+  background: var(--charcoal-900);
+  border-left: 2px solid var(--gold-700);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #475569;
-  border-radius: 4px;
+  background: linear-gradient(180deg, var(--gold-500), var(--gold-700));
+  border-radius: 6px;
+  border: 2px solid var(--charcoal-900);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: linear-gradient(180deg, var(--gold-400), var(--gold-600));
 }
 
 /* Animation classes */
@@ -68,5 +106,56 @@ code {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Maximalist Gold Glow Effects */
+.gold-glow {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
+              0 0 40px rgba(255, 215, 0, 0.2),
+              0 0 60px rgba(255, 215, 0, 0.1);
+}
+
+.gold-border-glow {
+  box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.1),
+              0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+/* Ornate borders for maximalist design */
+.ornate-border {
+  position: relative;
+  border: 3px solid var(--gold-700);
+}
+
+.ornate-border::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 1px solid var(--gold-500);
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Gradient text utility */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold-300), var(--gold-500), var(--gold-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
   }
 }
